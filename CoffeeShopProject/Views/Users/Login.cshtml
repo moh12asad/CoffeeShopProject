@@ -1,0 +1,41 @@
+﻿@model CoffeeShopProject.Models.User
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <!--<a><img src="~/Content/coffee.jpg" height="100%" width="100%" /></a>
+
+    <style>
+        body {
+            background-image: url('../../Content/coffee1.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+    </style>-->
+    <h1 style="text-align:center"> Welcome!</h1>
+    <div>
+        <form action="Login" method="post">
+
+            First name: @Html.TextBoxFor(m => m.FirstName) @Html.ValidationMessageFor(x => x.FirstName)
+            <br />
+            Last name: @Html.TextBoxFor(m => m.LastName) @Html.ValidationMessageFor(x => x.LastName)
+            <br />
+            Id: @Html.TextBoxFor(m => m.Id, new { @type = "number" })
+            <br />
+            Vip: @Html.TextBoxFor(m => m.Vip)
+            <br />
+            <input id="sendDetails" type="submit" value="Login" />
+        </form>
+    </div>
+</body>
+</html>

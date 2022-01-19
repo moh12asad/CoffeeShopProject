@@ -1,0 +1,40 @@
+﻿@model CoffeeShopProject.Models.User
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    Welcome Admin
+</head> 
+
+<body>
+    <!--<a><img src="~/Content/coffee.jpg" height="100%" width="100%" /></a>
+
+    <style>
+        body {
+            background-image: url('../../Content/coffee1.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+    </style>-->
+    <h1 style="text-align:center"> Welcome!</h1>
+    <div>
+        <form action="Submit" method="post">
+
+            First name: @Html.TextBoxFor(m => m.FirstName) @Html.ValidationMessageFor(x => x.FirstName)
+            <br />
+            Last name: @Html.TextBoxFor(m => m.LastName) @Html.ValidationMessageFor(x => x.LastName)
+            <br />
+            Id: @Html.TextBoxFor(m => m.Id, new { @type = "number" })
+            <br />
+            User Type(barita/client): @Html.TextBoxFor(m => m.UserType) @Html.ValidationMessageFor(x => x.UserType)
+            <input id="sendDetails" type="submit" value="Submit" />
+        </form>
+    </div>
+</body>
+</html>
