@@ -22,7 +22,7 @@ namespace CoffeeShopProject.Models
         [Required]
         public string UserType { get; set; }
         public string credit { get; set; }
-
+        [Required]
         public string pin { get; set; }
     }
 }

@@ -8,7 +8,6 @@
 <html>
 
 <head>
-    Welcome Admin
 </head> 
 
 <body>
@@ -26,15 +25,18 @@
     <div>
         <form action="Submit" method="post">
 
-            First name: @Html.TextBoxFor(m => m.FirstName) @Html.ValidationMessageFor(x => x.FirstName)
-            <br />
-            Last name: @Html.TextBoxFor(m => m.LastName) @Html.ValidationMessageFor(x => x.LastName)
-            <br />
-            Id: @Html.TextBoxFor(m => m.Id, new { @type = "number" })
-            <br />
-            User Type(barita/client): @Html.TextBoxFor(m => m.UserType) @Html.ValidationMessageFor(x => x.UserType)
+            <!--First name: @Html.TextBoxFor(m => m.FirstName) @Html.ValidationMessageFor(x => x.FirstName)
+    <br />
+    Last name: @Html.TextBoxFor(m => m.LastName) @Html.ValidationMessageFor(x => x.LastName)
+    <br />
+    Id: @Html.TextBoxFor(m => m.Id, new { @type = "number" })
+    <br />
+    User Type(barita/client): @Html.TextBoxFor(m => m.UserType) @Html.ValidationMessageFor(x => x.UserType)-->
+            <p>To Register click on Register</p>
+
             <input id="sendDetails" type="submit" value="Submit" />
         </form>
-    </div>
+
+</div>
 </body>
 </html>

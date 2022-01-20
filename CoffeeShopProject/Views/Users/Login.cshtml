@@ -30,9 +30,7 @@
             <br />
             Last name: @Html.TextBoxFor(m => m.LastName) @Html.ValidationMessageFor(x => x.LastName)
             <br />
-            Id: @Html.TextBoxFor(m => m.Id, new { @type = "number" })
-            <br />
-            Vip: @Html.TextBoxFor(m => m.Vip)
+            Pin: @Html.TextBoxFor(m => m.pin) @Html.ValidationMessageFor(x => x.pin)
             <br />
             <input id="sendDetails" type="submit" value="Login" />
         </form>

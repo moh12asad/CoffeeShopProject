@@ -15,7 +15,7 @@ namespace CoffeeShopProject.Controllers
         
         public ActionResult Submit()
         {
-            return RedirectToAction("Index","Users");
+            return RedirectToAction("Login","Users");
         }
     }
 }

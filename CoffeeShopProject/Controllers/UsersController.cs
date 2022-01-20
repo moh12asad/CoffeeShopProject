@@ -129,15 +129,15 @@ namespace CoffeeShopProject.Controllers
 
         public ActionResult Login(Models.User u)
         {
-            User activeuser = db.Users.Where(x => x.FirstName==u.FirstName && x.LastName==u.LastName && x.Id==u.Id).FirstOrDefault();
+            User activeuser = db.Users.Where(x => x.FirstName==u.FirstName && x.LastName==u.LastName && x.pin==u.pin).FirstOrDefault();
             if (activeuser == null)
             {
                 ViewBag.message ="One or more details are invaild";
                 return View("Login");
             }
-            if (u.UserType=="Admin")
-                     return RedirectToAction("Index", "Home");
-            return View("Index");
+            if (u.FirstName=="admin")
+                     return View("Admin");
+            return View("stam");
         }
 
         public ActionResult Register(User user)
