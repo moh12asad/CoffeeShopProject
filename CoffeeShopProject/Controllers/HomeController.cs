@@ -13,9 +13,14 @@ namespace CoffeeShopProject.Controllers
             return View();
         }
         
-        public ActionResult Submit()
+        public ActionResult Register1()
         {
-            return RedirectToAction("Login","Users");
+            return RedirectToAction("Register","Users");
         }
+        public ActionResult Login1()
+        {
+            return RedirectToAction("Login", "Users");
+        }
+        
     }
 }

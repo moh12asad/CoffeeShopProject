@@ -21,6 +21,10 @@ namespace CoffeeShopProject.Controllers
         {
             return View(db.Users.ToList());
         }
+        public ActionResult HomePage()
+        {
+            return View();
+        }
 
         // GET: Users/Details/5
         public ActionResult Details(int? id)
@@ -139,6 +143,15 @@ namespace CoffeeShopProject.Controllers
                      return View("Admin");
             return View("stam");
         }
+        public ActionResult Register1()
+        {
+            return View("Register", "Users");
+        }
+
+        public ActionResult Login1()
+        {
+            return View("Login","Users");
+        }
 
         public ActionResult Register(User user)
         {
@@ -154,3 +167,4 @@ namespace CoffeeShopProject.Controllers
 
     }
 }
+

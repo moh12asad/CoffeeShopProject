@@ -1,21 +1,20 @@
-﻿using System;
+﻿using CoffeeShopProject.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
-using CoffeeShopProject.Models;
 
 namespace CoffeeShopProject.UserDal
 {
-
-    public class UserDal:DbContext
+    public class ProductsDal: DbContext
     {
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<User>().ToTable("Users");
+            modelBuilder.Entity<Products>().ToTable("Products");
         }
-        public DbSet <User> Users { get; set; }
+        public DbSet<Products> Products { get; set; }
 
     }
 }

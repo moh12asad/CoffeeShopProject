@@ -1,0 +1,37 @@
+﻿@model CoffeeShopProject.Models.User
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+</head> 
+
+<body>
+    <!--<a><img src="~/Content/coffee.jpg" height="100%" width="100%" /></a>
+
+    <style>
+        body {
+            background-image: url('../../Content/coffee1.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+    </style>-->
+    <h1 style="text-align:center"> Welcome!</h1>
+    <div>
+        <form action="Register" method="post">
+            <p> Register1 </p>
+            <input id="sendDetails" type="submit" value="Register" />
+        </form>
+        <form action="Login" method="post">
+            <p>Login</p>
+            <input id="sendDetails" type="submit" value="Login" />
+        </form>
+
+    </div>
+</body>
+</html>

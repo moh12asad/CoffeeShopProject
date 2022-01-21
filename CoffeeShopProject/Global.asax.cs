@@ -7,6 +7,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using CoffeeShopProject.Models;
+using CoffeeShopProject.UserDal;
 
 namespace CoffeeShopProject
 {
@@ -18,6 +20,7 @@ namespace CoffeeShopProject
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            Database.SetInitializer<CoffeeShopProjectContext>(null);
             Database.SetInitializer<CoffeeShopProjectContext>(null);
         }
     }
