@@ -138,6 +138,10 @@
     <Compile Include="Migrations\202201201653589_InitialCreate.designer.cs">
       <DependentUpon>202201201653589_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202201211716248_m1.cs" />
+    <Compile Include="Migrations\202201211716248_m1.designer.cs">
+      <DependentUpon>202201211716248_m1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Products.cs" />
     <Compile Include="Models\User.cs" />
@@ -195,6 +199,7 @@
     <Content Include="Views\Products\Details.cshtml" />
     <Content Include="Views\Products\Edit.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Products\Menu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -217,6 +222,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202201201653589_InitialCreate.resx">
       <DependentUpon>202201201653589_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201211716248_m1.resx">
+      <DependentUpon>202201211716248_m1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

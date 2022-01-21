@@ -1,13 +1,12 @@
 ﻿@model IEnumerable<CoffeeShopProject.Models.Products>
-
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Menu";
 }
 
-<h2>Index</h2>
+<h2>Menu</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
+<p> 
+    
 </p>
 <table class="table">
     <tr>
@@ -38,7 +37,8 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+    @foreach (var item in Model)
+    {
 <tr>
     <td>
         @Html.DisplayFor(modelItem => item.type)
@@ -65,11 +65,9 @@
         @Html.DisplayFor(modelItem => item.sale)
     </td>
     <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.name }) |
-        @Html.ActionLink("Details", "Details", new { id = item.name }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.name })
+        @Html.ActionLink("Add to cart", "Edit", new { id = item.name })
     </td>
 </tr>
-}
+    }
 
 </table>

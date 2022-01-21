@@ -141,7 +141,7 @@ namespace CoffeeShopProject.Controllers
             }
             if (u.FirstName=="admin")
                      return View("Admin");
-            return View("stam");
+            return RedirectToAction("Menu","Products");
         }
         public ActionResult Register1()
         {

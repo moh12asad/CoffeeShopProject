@@ -18,6 +18,11 @@ namespace CoffeeShopProject
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Users", action = "HomePage", id = UrlParameter.Optional }
             );
+            routes.MapRoute(
+                name: "Products",
+                url: "Products",
+                defaults: new { controller = "Products", action = "Menu", id = UrlParameter.Optional }
+            );
         }
     }
 }

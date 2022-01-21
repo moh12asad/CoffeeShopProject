@@ -23,6 +23,7 @@ namespace CoffeeShopProject.Models
         public string price { get; set; }
 
         public string sale { get; set; }
+        public string type { get; set; }
 
 
     }

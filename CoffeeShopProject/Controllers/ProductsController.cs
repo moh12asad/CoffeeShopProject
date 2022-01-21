@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Dynamic;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -18,6 +19,7 @@ namespace CoffeeShopProject.Controllers
         // GET: Products
         public ActionResult Index()
         {
+            
             return View(db.Products.ToList());
         }
 
@@ -47,7 +49,7 @@ namespace CoffeeShopProject.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "name,alcohol,ptime,numordered,saleprice,price,sale")] Products products)
+        public ActionResult Create([Bind(Include = "name,alcohol,ptime,numordered,saleprice,price,sale,type")] Products products)
         {
 
             if (ModelState.IsValid)
@@ -80,7 +82,7 @@ namespace CoffeeShopProject.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "name,alcohol,ptime,numordered,saleprice,price,sale")] Products products)
+        public ActionResult Edit([Bind(Include = "name,alcohol,ptime,numordered,saleprice,price,sale,type")] Products products)
         {
             if (ModelState.IsValid)
             {
@@ -124,6 +126,10 @@ namespace CoffeeShopProject.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        public ActionResult Menu(User u)
+        {
+            return View(db.Products.ToList());
         }
     }
 }
