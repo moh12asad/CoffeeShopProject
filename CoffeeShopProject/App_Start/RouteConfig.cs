@@ -20,7 +20,7 @@ namespace CoffeeShopProject
             );
             routes.MapRoute(
                 name: "Products",
-                url: "Products",
+                url: "Products/{id}",
                 defaults: new { controller = "Products", action = "Menu", id = UrlParameter.Optional }
             );
         }

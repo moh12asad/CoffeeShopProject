@@ -11,10 +11,10 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.type)
+            @Html.DisplayNameFor(model => model.name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.name)
+            @Html.DisplayNameFor(model => model.type)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.alcohol)
@@ -65,7 +65,7 @@
         @Html.DisplayFor(modelItem => item.sale)
     </td>
     <td>
-        @Html.ActionLink("Add to cart", "Edit", new { id = item.name })
+        @Html.ActionLink("Add to cart", "Cart", new { id = item.name })
     </td>
 </tr>
     }

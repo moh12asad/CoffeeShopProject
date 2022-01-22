@@ -1,0 +1,56 @@
+﻿@model CoffeeShopProject.Models.Products
+
+@{
+    ViewBag.Title = "Order";
+}
+
+<h2>Order</h2>
+
+<div>
+    <h4>Products</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ptime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ptime) min
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.saleprice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.saleprice) NIS
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price) NIS
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price) NIS
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Payment", "Payment", new { id = Model.name }) |
+    @Html.ActionLink("Change", "Menu")
+</p>

@@ -129,7 +129,19 @@ namespace CoffeeShopProject.Controllers
         }
         public ActionResult Menu(User u)
         {
+            int total = 0;
             return View(db.Products.ToList());
+        }
+        public ActionResult Cart(string id)
+        {
+            Products p = db.Products.Find(id);
+            if (p == null)
+                return View("Menu");
+            return View("Order",p);
+        }
+        public ActionResult Order(Products p)
+        {
+            return View(p);
         }
     }
 }
