@@ -144,10 +144,12 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Products.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserDal\CartDal.cs" />
+    <Compile Include="UserDal\OrderDal.cs" />
     <Compile Include="UserDal\ProductsDal.cs" />
     <Compile Include="UserDal\UserDal.cs" />
   </ItemGroup>
@@ -192,7 +194,6 @@
     <Content Include="Views\Shared\_LayoutPage1.cshtml" />
     <Content Include="Views\Users\Login.cshtml" />
     <Content Include="Views\Users\Register.cshtml" />
-    <Content Include="Views\Users\stam.cshtml" />
     <Content Include="Views\Users\Admin.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -204,6 +205,9 @@
     <Content Include="Views\Products\Menu.cshtml" />
     <Content Include="Views\Products\Cart.cshtml" />
     <Content Include="Views\Products\Order.cshtml" />
+    <Content Include="Views\Products\BaristaOrders.cshtml" />
+    <Content Include="Views\Products\Payment.cshtml" />
+    <Content Include="Views\Products\ThankYou.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

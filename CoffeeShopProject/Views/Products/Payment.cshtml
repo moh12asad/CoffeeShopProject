@@ -1,0 +1,35 @@
+﻿@model CoffeeShopProject.Models.Products
+@{
+    ViewBag.Title = "Payment";
+
+}
+
+<h2>Payment</h2>
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+</head>
+<body>
+    <h1 style="text-align:center"> Welcome!</h1>
+    <div>
+        <form action="Thankyou" method="post">
+
+            First name: <input type="text" name="Name" />
+            <br />
+            Credit card number: <input type="text" name="Credit card" />
+            <br />
+            Expiry date: <input type="text" name="date" />
+            <br />
+            3 digit back the card: <input type="text" />
+            <br />
+            Id: <input type="text" name="Id" />
+            <br />
+            @Html.ActionLink("Pay", "ThankYou")
+        </form>
+    </div>
+</body>
+</html>
+

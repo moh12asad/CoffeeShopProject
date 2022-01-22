@@ -16,7 +16,6 @@ namespace CoffeeShopProject.Controllers
     {
         private CoffeeShopProjectContext db = new CoffeeShopProjectContext();
 
-        // GET: Users
         public ActionResult Index()
         {
             return View(db.Users.ToList());
@@ -26,7 +25,6 @@ namespace CoffeeShopProject.Controllers
             return View();
         }
 
-        // GET: Users/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -41,15 +39,11 @@ namespace CoffeeShopProject.Controllers
             return View(user);
         }
 
-        // GET: Users/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Users/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Age,Vip,UserType,pin")] User user)
@@ -65,7 +59,6 @@ namespace CoffeeShopProject.Controllers
             return View(user);
         }
 
-        // GET: Users/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -80,9 +73,6 @@ namespace CoffeeShopProject.Controllers
             return View(user);
         }
 
-        // POST: Users/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,Age,Vip,UserType,credit,pin")] User user)
@@ -96,7 +86,6 @@ namespace CoffeeShopProject.Controllers
             return View(user);
         }
 
-        // GET: Users/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -111,7 +100,6 @@ namespace CoffeeShopProject.Controllers
             return View(user);
         }
 
-        // POST: Users/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
@@ -141,6 +129,9 @@ namespace CoffeeShopProject.Controllers
             }
             if (u.FirstName=="admin")
                      return View("Admin");
+
+            if (u.LastName  == "Barista")
+                return RedirectToAction("BaristaOrders", "Products",u);
 
             return RedirectToAction("Menu","Products",activeuser);
         }

@@ -14,16 +14,14 @@ namespace CoffeeShopProject.Controllers
 {
     public class ProductsController : Controller
     {
+        int total = 0;
         private ProductsDal db = new ProductsDal();
 
-        // GET: Products
         public ActionResult Index()
         {
-            
             return View(db.Products.ToList());
         }
-
-        // GET: Products/Details/5
+         
         public ActionResult Details(string id)
         {
             if (id == null)
@@ -38,15 +36,11 @@ namespace CoffeeShopProject.Controllers
             return View(products);
         }
 
-        // GET: Products/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Products/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "name,alcohol,ptime,numordered,saleprice,price,sale,type")] Products products)
@@ -62,7 +56,6 @@ namespace CoffeeShopProject.Controllers
             return View(products);
         }
 
-        // GET: Products/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
@@ -77,9 +70,6 @@ namespace CoffeeShopProject.Controllers
             return View(products);
         }
 
-        // POST: Products/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "name,alcohol,ptime,numordered,saleprice,price,sale,type")] Products products)
@@ -93,7 +83,6 @@ namespace CoffeeShopProject.Controllers
             return View(products);
         }
 
-        // GET: Products/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
@@ -108,7 +97,6 @@ namespace CoffeeShopProject.Controllers
             return View(products);
         }
 
-        // POST: Products/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
@@ -127,21 +115,30 @@ namespace CoffeeShopProject.Controllers
             }
             base.Dispose(disposing);
         }
-        public ActionResult Menu(User u)
+        public ActionResult Menu()
         {
-            int total = 0;
             return View(db.Products.ToList());
         }
         public ActionResult Cart(string id)
         {
+            
             Products p = db.Products.Find(id);
             if (p == null)
                 return View("Menu");
+            total = total + Int16.Parse(p.price);
             return View("Order",p);
         }
         public ActionResult Order(Products p)
         {
             return View(p);
+        }
+        public ActionResult Payment()
+        {
+            return View();
+        }
+        public ActionResult ThankYou()
+        {
+            return View();
         }
     }
 }

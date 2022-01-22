@@ -24,5 +24,11 @@ namespace CoffeeShopProject.Models
         public string credit { get; set; }
         [Required]
         public string pin { get; set; }
+        /*
+        public string name { get; set; }
+        public string time { get; set; }
+        public string price { get; set; }
+        public string type { get; set; }*/
+
     }
 }

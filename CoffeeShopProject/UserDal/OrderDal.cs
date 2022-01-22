@@ -3,19 +3,16 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
-using CoffeeShopProject.Models;
+
 namespace CoffeeShopProject.UserDal
 {
-    public class CartDal: DbContext
+    public class OrderDal: DbContext
     {
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Cart>().ToTable("Cart");
+            modelBuilder.Entity<OrderDal>().ToTable("Order");
         }
-        public DbSet<Products> Carts { get; set; }
-
-        public System.Data.Entity.DbSet<CoffeeShopProject.Models.User> Users { get; set; }
+        public DbSet<OrderDal> Orders { get; set; }
     }
 }
-
